@@ -1,0 +1,15 @@
+{
+  "businessName": "Laiya Coffee Roasters",
+  "tagline": "Your perfect stopover before the beach.",
+  "contact": {
+    "phone": "+63 912 345 6789",
+    "email": "hello@laiyacoffee.com",
+    "address": "General Luna St, Poblacion, San Juan, Batangas",
+    "messengerLink": "https://m.me/laiyacoffeeroasters",
+    "mapsLink": "https://maps.google.com/?q=San+Juan+Batangas"
+  },
+  "hours": [
+    { "day": "Monday - Friday", "time": "7:00 AM - 8:00 PM" },
+    { "day": "Saturday - Sunday", "time": "6:00 AM - 10:00 PM" }
+  ]
+}

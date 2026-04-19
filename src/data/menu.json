@@ -1,0 +1,37 @@
+[
+  {
+    "category": "Espresso Bar",
+    "items": [
+      {
+        "name": "Kapeng Barako",
+        "description": "Locally sourced from Batangas.",
+        "price": "90"
+      },
+      {
+        "name": "Spanish Latte",
+        "description": "Espresso with sweetened condensed milk.",
+        "price": "140"
+      },
+      {
+        "name": "Americano",
+        "description": "Classic espresso and water. Hot or Iced.",
+        "price": "110"
+      }
+    ]
+  },
+  {
+    "category": "Pastries & Sandwiches",
+    "items": [
+      {
+        "name": "Grilled Cheese",
+        "description": "Sourdough with cheddar and mozzarella.",
+        "price": "180"
+      },
+      {
+        "name": "Banana Walnut Loaf",
+        "description": "Baked fresh daily.",
+        "price": "85"
+      }
+    ]
+  }
+]

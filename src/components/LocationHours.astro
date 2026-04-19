@@ -1,0 +1,39 @@
+---
+import siteConfig from '../data/siteConfig.json';
+---
+
+<section id="location" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    
+    <div>
+      <h2 class="font-serif text-4xl font-bold text-coffee-900 mb-6">Visit Us</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold text-coffee-800 text-lg">Address</h3>
+          <p class="text-coffee-800/80">{siteConfig.contact.address}</p>
+          <a href={siteConfig.contact.mapsLink} target="_blank" class="inline-block mt-2 text-coffee-500 font-semibold hover:underline">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-coffee-800 text-lg">Opening Hours</h3>
+          <ul class="text-coffee-800/80 mt-2 space-y-1">
+            {siteConfig.hours.map((schedule) => (
+              <li class="flex justify-between max-w-xs">
+                <span>{schedule.day}</span>
+                <span class="font-medium">{schedule.time}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-coffee-100 aspect-video rounded-xl flex items-center justify-center overflow-hidden shadow-inner">
+      <p class="text-coffee-800/50 font-medium">Map Embed Goes Here</p>
+    </div>
+
+  </div>
+</section>

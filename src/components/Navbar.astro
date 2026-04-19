@@ -1,0 +1,18 @@
+---
+import siteConfig from '../data/siteConfig.json';
+---
+
+<header class="fixed w-full bg-white/90 backdrop-blur-sm border-b border-coffee-100 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="font-serif font-bold text-xl text-coffee-900 tracking-tight">
+      {siteConfig.businessName}
+    </a>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm">
+      <a href="#menu" class="hover:text-coffee-500 transition-colors">Menu</a>
+      <a href="#location" class="hover:text-coffee-500 transition-colors">Location</a>
+    </nav>
+    <a href={siteConfig.contact.messengerLink} target="_blank" class="bg-coffee-900 text-white px-4 py-2 text-sm rounded-full hover:bg-coffee-800 transition-colors">
+      Order Now
+    </a>
+  </div>
+</header>
