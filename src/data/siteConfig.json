@@ -1,11 +1,11 @@
 {
-  "businessName": "Laiya Coffee Roasters",
+  "businessName": "Servus Cafe",
   "tagline": "Your perfect stopover before the beach.",
   "contact": {
     "phone": "+63 912 345 6789",
-    "email": "hello@laiyacoffee.com",
+    "email": "hello@servuscafe.com",
     "address": "General Luna St, Poblacion, San Juan, Batangas",
-    "messengerLink": "https://m.me/laiyacoffeeroasters",
+    "messengerLink": "https://m.me/servuscafe",
     "mapsLink": "https://maps.google.com/?q=San+Juan+Batangas"
   },
   "hours": [

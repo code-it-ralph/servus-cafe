@@ -1,0 +1,45 @@
+---
+const reviews = [
+  {
+    name: "Juan Dela Cruz",
+    location: "Poblacion, San Juan",
+    text: "The best coffee in San Juan! The atmosphere is so cozy and the staff are incredibly friendly. My daily morning stop."
+  },
+  {
+    name: "Maria Santos",
+    location: "Laiya, San Juan",
+    text: "I love their cold brew! It's the perfect refreshment before heading to the beach. Servus Cafe is a gem in Batangas."
+  },
+  {
+    name: "Ricardo Reyes",
+    location: "Barangay 1, San Juan",
+    text: "A great place to work and enjoy a pastry. The chocolate croissant is a must-try. Highly recommend to everyone visiting!"
+  }
+];
+---
+
+<section id="testimonials" class="py-20 bg-coffee-50 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl font-bold text-coffee-900 mb-4">What Our Locals Say</h2>
+      <div class="w-16 h-1 bg-coffee-500 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {reviews.map((review) => (
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-coffee-100 relative">
+          <div class="text-coffee-500 text-6xl font-serif absolute -top-4 left-6 bg-white px-2">
+            &ldquo;
+          </div>
+          <p class="text-coffee-800 mb-6 italic leading-relaxed pt-4">
+            {review.text}
+          </p>
+          <div>
+            <p class="font-bold text-coffee-900">{review.name}</p>
+            <p class="text-sm text-coffee-500">{review.location}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
