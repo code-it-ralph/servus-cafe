@@ -1,0 +1,326 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import siteConfig from '../../data/siteConfig.json';
+import menuData from '../../data/menu.json';
+import { actions } from 'astro:actions';
+
+export const prerender = false;
+
+// Handle form submission status if needed, but we'll use client-side actions for better UX
+---
+
+<AdminLayout title="Internal Developer Dashboard">
+  <div class="grid lg:grid-cols-2 gap-8">
+    <!-- Site Settings Section -->
+    <section>
+      <div class="admin-card">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <span class="p-2 bg-slate-100 rounded">⚙️</span> Site Settings
+        </h2>
+
+        <form id="site-settings-form">
+          <label class="admin-label">Business Name</label>
+          <input
+            type="text"
+            name="businessName"
+            value={siteConfig.businessName}
+            class="admin-input"
+            required
+          />
+
+          <label class="admin-label">Tagline</label>
+          <input
+            type="text"
+            name="tagline"
+            value={siteConfig.tagline}
+            class="admin-input"
+          />
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="admin-label">Phone</label>
+              <input
+                type="text"
+                name="phone"
+                value={siteConfig.contact.phone}
+                class="admin-input"
+              />
+            </div>
+            <div>
+              <label class="admin-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={siteConfig.contact.email}
+                class="admin-input"
+                required
+              />
+            </div>
+          </div>
+
+          <label class="admin-label">Address</label>
+          <input
+            type="text"
+            name="address"
+            value={siteConfig.contact.address}
+            class="admin-input"
+          />
+
+          <label class="admin-label">Messenger Link</label>
+          <input
+            type="url"
+            name="messengerLink"
+            value={siteConfig.contact.messengerLink}
+            class="admin-input"
+          />
+
+          <label class="admin-label">Maps Link</label>
+          <input
+            type="url"
+            name="mapsLink"
+            value={siteConfig.contact.mapsLink}
+            class="admin-input"
+          />
+
+          <button type="submit" class="admin-btn-primary w-full mt-4"
+            >Save Site Settings</button
+          >
+        </form>
+      </div>
+
+      <!-- Deployment Checklist Section -->
+      <div class="admin-card">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <span class="p-2 bg-slate-100 rounded">🚀</span> Deployment Checklist
+        </h2>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center gap-3">
+            <input type="checkbox" checked disabled class="w-4 h-4" />
+            <span class="text-sm">JSON data structure validated</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <input type="checkbox" id="check-images" class="w-4 h-4" />
+            <label for="check-images" class="text-sm"
+              >Assets optimized and compressed</label
+            >
+          </li>
+          <li class="flex items-center gap-3">
+            <input type="checkbox" id="check-links" class="w-4 h-4" />
+            <label for="check-links" class="text-sm"
+              >External links verified</label
+            >
+          </li>
+        </ul>
+
+        <div
+          id="build-status"
+          class="hidden mb-4 p-3 rounded text-sm font-mono"
+        >
+        </div>
+
+        <button id="run-build-check" class="admin-btn-secondary w-full">
+          Run Mock Build Check
+        </button>
+      </div>
+    </section>
+
+    <!-- Menu Editor Section -->
+    <section>
+      <div class="admin-card">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <span class="p-2 bg-slate-100 rounded">☕</span> Menu Items Editor
+        </h2>
+
+        <div id="menu-editor-container" class="space-y-8">
+          <!-- Dynamic categories and items will be injected here -->
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-100">
+          <button id="add-category-btn" class="admin-btn-secondary w-full mb-4"
+            >+ Add New Category</button
+          >
+          <button id="save-menu-btn" class="admin-btn-primary w-full"
+            >Save Menu Changes</button
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+</AdminLayout>
+
+<script>
+  import { actions, isInputError } from 'astro:actions';
+
+  // --- Site Settings Logic ---
+  const siteSettingsForm = document.getElementById(
+    'site-settings-form',
+  ) as HTMLFormElement;
+  siteSettingsForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(siteSettingsForm);
+    const { data, error } = await actions.updateSiteConfig(formData);
+
+    if (error) {
+      let message = `Error saving settings: ${error.message}`;
+      if (isInputError(error)) {
+        message +=
+          '\n' +
+          Object.entries(error.fields)
+            .map(([k, v]) => `${k}: ${v}`)
+            .join('\n');
+      }
+      alert(message);
+    } else {
+      alert('Site settings saved successfully!');
+    }
+  });
+
+  // --- Menu Editor Logic ---
+  let menuData = JSON.parse(
+    document.getElementById('menu-data-json')?.textContent || '[]',
+  );
+  const menuContainer = document.getElementById('menu-editor-container');
+
+  function renderMenu() {
+    if (!menuContainer) return;
+    menuContainer.innerHTML = '';
+
+    menuData.forEach((category: any, catIdx: number) => {
+      const catDiv = document.createElement('div');
+      catDiv.className = 'border-l-4 border-slate-200 pl-4 py-2';
+      catDiv.innerHTML = `
+        <div class="flex justify-between items-center mb-4">
+          <input type="text" value="${category.category}" class="font-bold text-lg bg-transparent border-b border-dashed border-gray-300 focus:border-slate-500 outline-none" onchange="window.updateCategory(${catIdx}, this.value)" />
+          <div class="flex gap-2">
+            <button onclick="window.moveCategory(${catIdx}, -1)" class="text-xs p-1 hover:bg-gray-100 rounded">↑</button>
+            <button onclick="window.moveCategory(${catIdx}, 1)" class="text-xs p-1 hover:bg-gray-100 rounded">↓</button>
+            <button onclick="window.deleteCategory(${catIdx})" class="text-xs p-1 hover:bg-red-50 text-red-600 rounded">Delete</button>
+          </div>
+        </div>
+        <div class="space-y-4 ml-2">
+          ${category.items
+            .map(
+              (item: any, itemIdx: number) => `
+            <div class="bg-gray-50 p-3 rounded border border-gray-200 relative group">
+              <div class="grid grid-cols-[1fr_auto] gap-2 mb-2">
+                <input type="text" placeholder="Item Name" value="${item.name}" class="text-sm font-bold bg-transparent outline-none" onchange="window.updateItem(${catIdx}, ${itemIdx}, 'name', this.value)" />
+                <input type="text" placeholder="Price" value="${item.price}" class="text-sm font-mono font-bold text-right w-20 bg-transparent outline-none" onchange="window.updateItem(${catIdx}, ${itemIdx}, 'price', this.value)" />
+              </div>
+              <textarea placeholder="Description" class="w-full text-xs text-gray-600 bg-transparent resize-none outline-none" onchange="window.updateItem(${catIdx}, ${itemIdx}, 'description', this.value)">${item.description}</textarea>
+              <button onclick="window.deleteItem(${catIdx}, ${itemIdx})" class="absolute top-2 -right-2 hidden group-hover:block bg-red-500 text-white rounded-full w-5 h-5 text-[10px]">×</button>
+            </div>
+          `,
+            )
+            .join('')}
+          <button onclick="window.addItem(${catIdx})" class="text-xs text-slate-500 hover:text-slate-800">+ Add Item to ${category.category}</button>
+        </div>
+      `;
+      menuContainer.appendChild(catDiv);
+    });
+  }
+
+  // Global window functions for the dynamic editor
+  (window as any).updateCategory = (idx: number, val: string) => {
+    menuData[idx].category = val;
+  };
+  (window as any).deleteCategory = (idx: number) => {
+    if (confirm('Delete this entire category?')) {
+      menuData.splice(idx, 1);
+      renderMenu();
+    }
+  };
+  (window as any).moveCategory = (idx: number, dir: number) => {
+    const newIdx = idx + dir;
+    if (newIdx >= 0 && newIdx < menuData.length) {
+      [menuData[idx], menuData[newIdx]] = [menuData[newIdx], menuData[idx]];
+      renderMenu();
+    }
+  };
+  (window as any).addItem = (catIdx: number) => {
+    menuData[catIdx].items.push({ name: '', description: '', price: '' });
+    renderMenu();
+  };
+  (window as any).updateItem = (
+    catIdx: number,
+    itemIdx: number,
+    field: string,
+    val: string,
+  ) => {
+    menuData[catIdx].items[itemIdx][field] = val;
+  };
+  (window as any).deleteItem = (catIdx: number, itemIdx: number) => {
+    menuData[catIdx].items.splice(itemIdx, 1);
+    renderMenu();
+  };
+
+  document.getElementById('add-category-btn')?.addEventListener('click', () => {
+    menuData.push({ category: 'New Category', items: [] });
+    renderMenu();
+  });
+
+  document
+    .getElementById('save-menu-btn')
+    ?.addEventListener('click', async () => {
+      const { data, error } = await actions.updateMenu(menuData);
+      if (error) {
+        let message = `Error saving menu: ${error.message}`;
+        if (isInputError(error)) {
+          message +=
+            '\n' +
+            Object.entries(error.fields)
+              .map(([k, v]) => `${k}: ${v}`)
+              .join('\n');
+        }
+        alert(message);
+      } else {
+        alert('Menu changes saved successfully!');
+      }
+    });
+
+  // --- Build Check Logic ---
+  const buildBtn = document.getElementById('run-build-check');
+  const buildStatus = document.getElementById('build-status');
+
+  buildBtn?.addEventListener('click', async () => {
+    if (!buildStatus || !buildBtn) return;
+
+    buildBtn.innerText = 'Checking...';
+    (buildBtn as HTMLButtonElement).disabled = true;
+    buildStatus.classList.remove(
+      'hidden',
+      'bg-green-100',
+      'text-green-800',
+      'bg-red-100',
+      'text-red-800',
+    );
+    buildStatus.classList.add('block', 'bg-gray-100', 'text-gray-600');
+    buildStatus.innerText = 'Initializing build process simulation...';
+
+    const { data, error } = await actions.runBuildCheck();
+
+    (buildBtn as HTMLButtonElement).disabled = false;
+    buildBtn.innerText = 'Run Mock Build Check';
+
+    if (error) {
+      buildStatus.innerText = `System Error: ${error.message}`;
+      buildStatus.classList.add('bg-red-100', 'text-red-800');
+    } else if (data) {
+      buildStatus.innerText = `[${data.timestamp}] ${data.message}`;
+      if (data.success) {
+        buildStatus.classList.add('bg-green-100', 'text-green-800');
+      } else {
+        buildStatus.classList.add('bg-red-100', 'text-red-800');
+      }
+    }
+  });
+
+  // Initial render
+  renderMenu();
+</script>
+
+<!-- Transfer initial data to client-side -->
+<script
+  id="menu-data-json"
+  type="application/json"
+  set:html={JSON.stringify(menuData)}
+/>
