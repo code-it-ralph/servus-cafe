@@ -7,6 +7,6 @@ export default defineConfig({
   site: 'https://code-it-ralph.github.io',
   base: '/servus-cafe',
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [/** @type {any} */ (tailwindcss())],
   },
 });
