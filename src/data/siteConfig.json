@@ -1,11 +1,13 @@
 {
   "businessName": "Servus Cafe",
-  "tagline": "Your perfect stopover before the beach.",
+  "tagline": "come as a guest, leave as a friend ◡̈",
   "contact": {
-    "phone": "+63 912 345 6789",
-    "email": "hello@servuscafe.com",
+    "phone": "+63 998 511 2880",
+    "email": "",
+    "instagram": "https://www.instagram.com/servuscafe_/",
+    "tiktok": "https://www.tiktok.com/@servus.cafe",
     "address": "Servus Cafe, Putingbuhangin, San Juan, Batangas, Puting Buhangin, Philippines",
-    "messengerLink": "https://m.me/servuscafe",
+    "messengerLink": "https://m.me/Servus-61552421811746",
     "mapsLink": "https://maps.app.goo.gl/RdPVqUPghapTtMSA8"
   },
   "hours": [
