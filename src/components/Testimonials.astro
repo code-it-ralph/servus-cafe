@@ -2,28 +2,28 @@
 import reviews from '../data/reviews.json';
 ---
 
-<section id="testimonials" class="py-20 bg-coffee-50 px-4">
+<section id="testimonials" class="py-20 bg-brand-50 px-4">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="font-serif text-4xl font-bold text-coffee-900 mb-4">
+      <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">
         What Our Locals Say
       </h2>
-      <div class="w-16 h-1 bg-coffee-500 mx-auto"></div>
+      <div class="w-16 h-1 bg-brand-500 mx-auto"></div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
       {
         reviews.map((review) => (
-          <div class="bg-white p-8 rounded-2xl shadow-sm border border-coffee-100 relative">
-            <div class="text-coffee-500 text-6xl font-serif absolute -top-4 left-6 bg-white px-2">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 relative">
+            <div class="text-brand-500 text-6xl font-serif absolute -top-4 left-6 bg-white px-2">
               &ldquo;
             </div>
-            <p class="text-coffee-800 mb-6 italic leading-relaxed pt-4">
+            <p class="text-stone-900 mb-6 italic leading-relaxed pt-4">
               {review.text}
             </p>
             <div>
-              <p class="font-bold text-coffee-900">{review.name}</p>
-              <p class="text-sm text-coffee-500">{review.location}</p>
+              <p class="font-bold text-stone-900">{review.name}</p>
+              <p class="text-sm text-brand-500">{review.location}</p>
             </div>
           </div>
         ))

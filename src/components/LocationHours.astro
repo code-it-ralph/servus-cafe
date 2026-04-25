@@ -5,26 +5,26 @@ import siteConfig from '../data/siteConfig.json';
 <section id="location" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
     <div>
-      <h2 class="font-serif text-4xl font-bold text-coffee-900 mb-6">
+      <h2 class="font-serif text-4xl font-bold text-stone-900 mb-6">
         Visit Us
       </h2>
 
       <div class="space-y-6">
         <div>
-          <h3 class="font-bold text-coffee-800 text-lg">Address</h3>
-          <p class="text-coffee-800/80">{siteConfig.contact.address}</p>
+          <h3 class="font-bold text-stone-900 text-lg">Address</h3>
+          <p class="text-stone-900/80">{siteConfig.contact.address}</p>
           <a
             href={siteConfig.contact.mapsLink}
             target="_blank"
-            class="inline-block mt-2 text-coffee-500 font-semibold hover:underline"
+            class="inline-block mt-2 text-brand-500 font-semibold hover:underline"
           >
             Open in Google Maps &rarr;
           </a>
         </div>
 
         <div>
-          <h3 class="font-bold text-coffee-800 text-lg">Opening Hours</h3>
-          <ul class="text-coffee-800/80 mt-2 space-y-1">
+          <h3 class="font-bold text-stone-900 text-lg">Opening Hours</h3>
+          <ul class="text-stone-900/80 mt-2 space-y-1">
             {
               siteConfig.hours.map((schedule) => (
                 <li class="flex justify-between max-w-xs">
@@ -39,9 +39,9 @@ import siteConfig from '../data/siteConfig.json';
     </div>
 
     <div
-      class="bg-coffee-100 aspect-video rounded-xl flex items-center justify-center overflow-hidden shadow-inner"
+      class="bg-brand-50 aspect-video rounded-xl flex items-center justify-center overflow-hidden shadow-inner"
     >
-      <p class="text-coffee-800/50 font-medium">
+      <p class="text-stone-900/50 font-medium">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.0215793355937!2d121.4099526749952!3d13.77757218661698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd3b58cd39cd61%3A0x8c9e70dcba2bf856!2sServus%20Cafe!5e0!3m2!1sen!2sph!4v1777090891026!5m2!1sen!2sph"
           width="600"

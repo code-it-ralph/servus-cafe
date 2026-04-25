@@ -1,5 +1,6 @@
 {
   "businessName": "Servus Cafe",
+  "established": "2023",
   "tagline": "come as a guest, leave as a friend ◡̈",
   "contact": {
     "phone": "+63 998 511 2880",
@@ -42,7 +43,7 @@
     {
       "icon": "🌿",
       "label": "Garden Seating",
-      "description": "Relax in our peaceful open-air setting",
+      "description": "Relax and enjoy the fresh breeze and garden views",
       "available": true
     },
     {

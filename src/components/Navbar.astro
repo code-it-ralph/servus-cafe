@@ -3,12 +3,12 @@ import siteConfig from '../data/siteConfig.json';
 ---
 
 <header
-  class="fixed w-full bg-white/90 backdrop-blur-sm border-b border-coffee-100 z-50"
+  class="fixed w-full bg-white/90 backdrop-blur-sm border-b border-stone-100 z-50"
 >
   <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
     <a
       href="/"
-      class="flex items-center gap-3 font-serif font-bold text-xl text-coffee-900 tracking-tight"
+      class="flex items-center gap-3 font-serif font-bold text-xl text-stone-900 tracking-tight"
     >
       <img
         src="/logo.png"
@@ -18,16 +18,16 @@ import siteConfig from '../data/siteConfig.json';
       {siteConfig.businessName}
     </a>
     <nav class="hidden md:flex gap-6 font-semibold text-sm">
-      <a href="#about" class="hover:text-coffee-500 transition-colors">About</a>
-      <a href="#menu" class="hover:text-coffee-500 transition-colors">Menu</a>
-      <a href="#location" class="hover:text-coffee-500 transition-colors"
+      <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
+      <a href="#menu" class="hover:text-brand-500 transition-colors">Menu</a>
+      <a href="#location" class="hover:text-brand-500 transition-colors"
         >Location</a
       >
     </nav>
     <a
       href={siteConfig.contact.messengerLink}
       target="_blank"
-      class="bg-coffee-900 text-white px-4 py-2 text-sm rounded-full hover:bg-coffee-800 transition-colors"
+      class="bg-brand-500 text-white px-4 py-2 text-sm rounded-full hover:bg-brand-600 transition-colors"
     >
       Order Now
     </a>

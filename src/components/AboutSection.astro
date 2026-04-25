@@ -8,28 +8,28 @@ import siteConfig from '../data/siteConfig.json';
       {/* Text Content */}
       <div class="order-2 lg:order-1">
         <div
-          class="inline-block px-3 py-1 bg-coffee-100 text-coffee-600 text-xs font-bold uppercase tracking-widest rounded-full mb-6"
+          class="inline-block px-3 py-1 bg-brand-100 text-brand-600 text-xs font-bold uppercase tracking-widest rounded-full mb-6"
         >
           Our Story
         </div>
         <h2
-          class="font-serif text-4xl md:text-5xl font-bold text-coffee-900 mb-8 leading-tight"
+          class="font-serif text-4xl md:text-5xl font-bold text-stone-900 mb-8 leading-tight"
         >
           Come as a guest, <br />
-          <span class="text-coffee-500 italic">leave as a friend.</span>
+          <span class="text-brand-500 italic">leave as a friend.</span>
         </h2>
-        <div class="space-y-6 text-coffee-800/80 leading-relaxed text-lg">
+        <div class="space-y-6 text-stone-900/80 leading-relaxed text-lg">
           <p>
-            The name <span class="font-bold text-coffee-900">Servus</span> is more
+            The name <span class="font-bold text-stone-900">Servus</span> is more
             than just a brand—it's an ancient Latin greeting that translates to "at
             your service." It perfectly captures our philosophy of hospitality here
             in the heart of San Juan, Batangas.
           </p>
           <p>
-            What started as a passion for the perfect brew has grown into a
-            community hub. Whether you're a local resident starting your day or
-            a traveler looking for a cozy stopover before hitting the beach at
-            Laiya, we've designed our space to be your "third home."
+            We take pride in our "Euro-Lokal" fusion. WWhether you’re craving an
+            authentic Austrian Schnitzel and a hearty Bosner sandwich, or
+            looking for a local favorite like Suman at Mangga paired with a
+            Sisig Pizza, our menu is a celebration of both worlds."
           </p>
         </div>
 
@@ -39,13 +39,13 @@ import siteConfig from '../data/siteConfig.json';
             siteConfig.amenities
               .filter((item) => item.available)
               .map((item) => (
-                <div class="flex gap-4 p-4 rounded-2xl bg-coffee-50 border border-coffee-100/50 hover:border-coffee-200 transition-colors">
+                <div class="flex gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100/50 hover:border-brand-200 transition-colors">
                   <div class="text-2xl">{item.icon}</div>
                   <div>
-                    <h4 class="font-bold text-coffee-900 text-sm">
+                    <h4 class="font-bold text-stone-900 text-sm">
                       {item.label}
                     </h4>
-                    <p class="text-[11px] text-coffee-500 leading-tight mt-0.5">
+                    <p class="text-[11px] text-brand-600 leading-tight mt-0.5">
                       {item.description}
                     </p>
                   </div>
@@ -61,18 +61,20 @@ import siteConfig from '../data/siteConfig.json';
           class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
         >
           <img
-            src="/logo.jpg"
+            src="/shop.jpg"
             alt="Servus Cafe Interior"
             class="w-full h-full object-cover scale-110"
           />
         </div>
         {/* Decorative elements */}
         <div
-          class="absolute -bottom-6 -left-6 bg-coffee-900 text-white p-8 rounded-2xl hidden md:block shadow-xl -rotate-3"
+          class="absolute -bottom-6 -left-6 bg-stone-900 text-white p-8 rounded-2xl hidden md:block shadow-xl -rotate-3"
         >
-          <p class="font-serif text-3xl font-bold italic">Est. 2023</p>
+          <p class="font-serif text-3xl font-bold italic">
+            Est. {siteConfig.established}
+          </p>
           <p
-            class="text-xs uppercase tracking-widest opacity-60 mt-2 text-coffee-200"
+            class="text-xs uppercase tracking-widest opacity-60 mt-2 text-brand-100"
           >
             Brewing Daily
           </p>
