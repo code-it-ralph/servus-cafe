@@ -19,5 +19,37 @@
       "day": "Tuesday - Sunday",
       "time": "10:00 AM - 9:00 PM"
     }
+  ],
+  "amenities": [
+    {
+      "icon": "📶",
+      "label": "Free Wi-Fi",
+      "description": "Fast & reliable for work or play",
+      "available": true
+    },
+    {
+      "icon": "🔌",
+      "label": "Charging Points",
+      "description": "Power up your devices while you recharge",
+      "available": true
+    },
+    {
+      "icon": "🐾",
+      "label": "Pet Friendly",
+      "description": "Your furry friends are always welcome",
+      "available": true
+    },
+    {
+      "icon": "🌿",
+      "label": "Garden Seating",
+      "description": "Relax in our peaceful open-air setting",
+      "available": true
+    },
+    {
+      "icon": "❄️",
+      "label": "Fully AC",
+      "description": "Beat the Batangas heat in comfort",
+      "available": false
+    }
   ]
 }
