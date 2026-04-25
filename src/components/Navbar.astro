@@ -1,5 +1,6 @@
 ---
 import siteConfig from '../data/siteConfig.json';
+import logoImg from '../assets/images/logo.png';
 ---
 
 <header class="fixed w-full bg-stone-50 border-b border-stone-200 z-50">
@@ -9,7 +10,7 @@ import siteConfig from '../data/siteConfig.json';
       class="flex items-center gap-3 font-serif font-bold text-xl text-stone-900 tracking-tight"
     >
       <img
-        src={import.meta.env.BASE_URL + 'logo.png'}
+        src={logoImg.src}
         alt="Servus Cafe Logo"
         class="w-10 h-10 rounded-full object-cover"
       />

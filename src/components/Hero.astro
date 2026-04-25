@@ -1,5 +1,6 @@
 ---
 import siteConfig from '../data/siteConfig.json';
+import heroBg from '../assets/images/shop.jpg';
 ---
 
 <section
@@ -7,9 +8,10 @@ import siteConfig from '../data/siteConfig.json';
 >
   <div class="absolute inset-0 z-0">
     <img
-      src={import.meta.env.BASE_URL + "shop.jpg"}
+      src={heroBg.src}
       alt="Servus Cafe Nature Vibe"
       class="w-full h-full object-cover"
+      loading="lazy"
     />
     <div class="absolute inset-0 bg-stone-900/60"></div>
   </div>
