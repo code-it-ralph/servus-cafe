@@ -2,11 +2,10 @@
 import AdminLayout from '../../layouts/AdminLayout.astro';
 import siteConfig from '../../data/siteConfig.json';
 import menuData from '../../data/menu.json';
-import { actions } from 'astro:actions';
 
 export const prerender = true;
 
-// Handle form submission status if needed, but we'll use client-side actions for better UX
+// The Admin Dashboard is now Read-Only on GitHub Pages
 ---
 
 <AdminLayout title="Internal Developer Dashboard">
@@ -82,8 +81,10 @@ export const prerender = true;
             class="admin-input"
           />
 
-          <button type="submit" class="admin-btn-primary w-full mt-4"
-            >Save Site Settings</button
+          <button
+            type="button"
+            class="admin-btn-primary w-full mt-4 opacity-50 cursor-not-allowed"
+            disabled>Save Site Settings (Read-Only on GH Pages)</button
           >
         </form>
       </div>
@@ -136,11 +137,15 @@ export const prerender = true;
         </div>
 
         <div class="mt-8 pt-6 border-t border-gray-100">
-          <button id="add-category-btn" class="admin-btn-secondary w-full mb-4"
-            >+ Add New Category</button
+          <button
+            id="add-category-btn"
+            class="admin-btn-secondary w-full mb-4 opacity-50 cursor-not-allowed"
+            disabled>+ Add New Category</button
           >
-          <button id="save-menu-btn" class="admin-btn-primary w-full"
-            >Save Menu Changes</button
+          <button
+            id="save-menu-btn"
+            class="admin-btn-primary w-full opacity-50 cursor-not-allowed"
+            disabled>Save Menu Changes (Read-Only on GH Pages)</button
           >
         </div>
       </div>
@@ -149,30 +154,13 @@ export const prerender = true;
 </AdminLayout>
 
 <script>
-  import { actions, isInputError } from 'astro:actions';
-
   // --- Site Settings Logic ---
   const siteSettingsForm = document.getElementById(
     'site-settings-form',
   ) as HTMLFormElement;
   siteSettingsForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const formData = new FormData(siteSettingsForm);
-    const { data, error } = await actions.updateSiteConfig(formData);
-
-    if (error) {
-      let message = `Error saving settings: ${error.message}`;
-      if (isInputError(error)) {
-        message +=
-          '\n' +
-          Object.entries(error.fields)
-            .map(([k, v]) => `${k}: ${v}`)
-            .join('\n');
-      }
-      alert(message);
-    } else {
-      alert('Site settings saved successfully!');
-    }
+    alert('Saving is disabled on GitHub Pages as it requires a server.');
   });
 
   // --- Menu Editor Logic ---
@@ -261,20 +249,7 @@ export const prerender = true;
   document
     .getElementById('save-menu-btn')
     ?.addEventListener('click', async () => {
-      const { data, error } = await actions.updateMenu(menuData);
-      if (error) {
-        let message = `Error saving menu: ${error.message}`;
-        if (isInputError(error)) {
-          message +=
-            '\n' +
-            Object.entries(error.fields)
-              .map(([k, v]) => `${k}: ${v}`)
-              .join('\n');
-        }
-        alert(message);
-      } else {
-        alert('Menu changes saved successfully!');
-      }
+      alert('Saving is disabled on GitHub Pages as it requires a server.');
     });
 
   // --- Build Check Logic ---
@@ -294,24 +269,14 @@ export const prerender = true;
       'text-red-800',
     );
     buildStatus.classList.add('block', 'bg-gray-100', 'text-gray-600');
-    buildStatus.innerText = 'Initializing build process simulation...';
+    buildStatus.innerText = 'Simulating build process...';
 
-    const { data, error } = await actions.runBuildCheck();
-
-    (buildBtn as HTMLButtonElement).disabled = false;
-    buildBtn.innerText = 'Run Mock Build Check';
-
-    if (error) {
-      buildStatus.innerText = `System Error: ${error.message}`;
-      buildStatus.classList.add('bg-red-100', 'text-red-800');
-    } else if (data) {
-      buildStatus.innerText = `[${data.timestamp}] ${data.message}`;
-      if (data.success) {
-        buildStatus.classList.add('bg-green-100', 'text-green-800');
-      } else {
-        buildStatus.classList.add('bg-red-100', 'text-red-800');
-      }
-    }
+    setTimeout(() => {
+      (buildBtn as HTMLButtonElement).disabled = false;
+      buildBtn.innerText = 'Run Mock Build Check';
+      buildStatus.innerText = `[${new Date().toISOString()}] Simulation complete. All systems nominal.`;
+      buildStatus.classList.add('bg-green-100', 'text-green-800');
+    }, 2000);
   });
 
   // Initial render
