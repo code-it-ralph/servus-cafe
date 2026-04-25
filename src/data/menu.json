@@ -1,36 +1,396 @@
 [
   {
-    "category": "Espresso Bar",
+    "category": "Pizza",
     "items": [
       {
-        "name": "Kapeng Barako",
-        "description": "Locally sourced from Batangas.",
-        "price": "90"
+        "name": "Pizza Baguette",
+        "description": "",
+        "price": "180"
       },
       {
-        "name": "Spanish Latte",
-        "description": "Espresso with sweetened condensed milk.",
-        "price": "140"
+        "name": "Margherita",
+        "description": "Tomato and Cheese",
+        "price": "350"
       },
       {
-        "name": "Americano",
-        "description": "Classic espresso and water. Hot or Iced.",
-        "price": "110"
+        "name": "Hawaiian",
+        "description": "Tomato, Cheese, Ham and Pineapple",
+        "price": "400"
+      },
+      {
+        "name": "Salami",
+        "description": "Tomato, Cheese, Salami, Onion, Mushroom and Olives",
+        "price": "450"
+      },
+      {
+        "name": "Diavolo",
+        "description": "Tomato, Cheese, Hot Sausage and Chili",
+        "price": "450"
+      },
+      {
+        "name": "Bacon & Mushroom",
+        "description": "Tomato, Cheese, Bacon, Mushroom",
+        "price": "450"
+      },
+      {
+        "name": "Four Cheese",
+        "description": "Tomato, Mozzarella, Parmesan, Cream Cheese, Havarti",
+        "price": "450"
+      },
+      {
+        "name": "Austrian Surprise",
+        "description": "Tomato, Cheese, Garlic, Hunter Sausage, Bacon and Paprika",
+        "price": "500"
+      },
+      {
+        "name": "Bolognese",
+        "description": "Tomato, Cheese, Salami, Bolognese",
+        "price": "500"
+      },
+      {
+        "name": "Sisig",
+        "description": "Tomato, Cheese, Sisig, Chili",
+        "price": "500"
+      },
+      {
+        "name": "Customized Pizza",
+        "description": "",
+        "price": "500"
+      },
+      {
+        "name": "Pizza al taglio (Square Cut)",
+        "description": "Margherita, Hawaiian, Salami, Austrian",
+        "price": "850"
       }
     ]
   },
   {
-    "category": "Pastries & Sandwiches",
+    "category": "Sandwich",
     "items": [
       {
-        "name": "Grilled Cheese",
-        "description": "Sourdough with cheddar and mozzarella.",
+        "name": "Ham Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Meatloaf Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Salami Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Garlic Sausage Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Hot Sausage Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Cheese Sausage Sandwich",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Bosner",
+        "description": "",
+        "price": "165"
+      },
+      {
+        "name": "Chicken Schnitzel Cheese Burger",
+        "description": "",
+        "price": "190"
+      },
+      {
+        "name": "Frikadellen",
+        "description": "",
+        "price": "190"
+      }
+    ]
+  },
+  {
+    "category": "Pasta",
+    "items": [
+      {
+        "name": "Bacon & Ham Carbonara",
+        "description": "",
+        "price": "200"
+      },
+      {
+        "name": "Bolognese",
+        "description": "",
+        "price": "200"
+      },
+      {
+        "name": "Pesto",
+        "description": "",
+        "price": "200"
+      }
+    ]
+  },
+  {
+    "category": "Appetizer",
+    "items": [
+      {
+        "name": "Fries",
+        "description": "",
+        "price": "80"
+      },
+      {
+        "name": "Suman, Tamalis, Mangga at Tsokolate",
+        "description": "",
+        "price": "100"
+      },
+      {
+        "name": "Gebratenes Brot",
+        "description": "Fried Bread with Garlic / Curry / Chili Dip",
+        "price": "100"
+      },
+      {
+        "name": "Schnitzel with Fries",
+        "description": "",
+        "price": "170"
+      },
+      {
+        "name": "Sliced Baguette with Salmon",
+        "description": "",
+        "price": "170"
+      },
+      {
+        "name": "Garden Salad",
+        "description": "",
+        "price": "200"
+      }
+    ]
+  },
+  {
+    "category": "Beverages",
+    "items": [
+      {
+        "name": "Bottled Water",
+        "description": "",
+        "price": "20"
+      },
+      {
+        "name": "Bottled Soda",
+        "description": "Coke, Sprite, Royal, Sting, Mountain Dew",
+        "price": "25"
+      },
+      {
+        "name": "Buko Juice",
+        "description": "",
+        "price": "50"
+      },
+      {
+        "name": "Calamansi Juice",
+        "description": "",
+        "price": "65"
+      },
+      {
+        "name": "Soda in Can",
+        "description": "Coke, Sprite, Royal",
+        "price": "65"
+      },
+      {
+        "name": "Juice in Can",
+        "description": "Pineapple, Four Season, Mango",
+        "price": "65"
+      },
+      {
+        "name": "Iced Tea Pitcher",
+        "description": "",
+        "price": "85"
+      }
+    ]
+  },
+  {
+    "category": "Coffee & Tea",
+    "items": [
+      {
+        "name": "Espresso",
+        "description": "Hot",
+        "price": "60"
+      },
+      {
+        "name": "Tea",
+        "description": "Chamomile, Mint, Lemon Ginger, Peach, Blueberry, Raspberry",
+        "price": "80"
+      },
+      {
+        "name": "Drip Coffee",
+        "description": "Hot",
+        "price": "80"
+      },
+      {
+        "name": "Americano",
+        "description": "Hot: 100 / Iced: 120",
+        "price": "100 - 120"
+      },
+      {
+        "name": "Chocolate",
+        "description": "Hot: 120 / Iced: 140",
+        "price": "120 - 140"
+      },
+      {
+        "name": "Cappuccino",
+        "description": "Hot: 120 / Iced: 140",
+        "price": "120 - 140"
+      },
+      {
+        "name": "Caramel Macchiato",
+        "description": "Hot: 120 / Iced: 140",
+        "price": "120 - 140"
+      },
+      {
+        "name": "Latte",
+        "description": "Vanilla, Hazelnut, Peppermint, Mocha, Almond, Salted Caramel, White Chocolate, Spanish, Macadamia, Popcorn, Butterscotch",
+        "price": "120 - 140"
+      },
+      {
+        "name": "Affogato",
+        "description": "Iced",
+        "price": "160"
+      },
+      {
+        "name": "Matcha Latte",
+        "description": "Hot: 160 / Iced: 180",
+        "price": "160 - 180"
+      },
+      {
+        "name": "Irish Coffee",
+        "description": "Hot: 120 / Iced: 140",
+        "price": "120 - 140"
+      },
+      {
+        "name": "Coolers",
+        "description": "Green Apple, Lychee, Peach, Lemon, Strawberry, Blueberry, Mango, Passion Fruit",
+        "price": "120"
+      }
+    ]
+  },
+  {
+    "category": "Fruit Shakes & Frappe",
+    "items": [
+      {
+        "name": "Fruit Shakes (Non-Dairy)",
+        "description": "Guyabano, Pineapple, Four Seasons",
+        "price": "130"
+      },
+      {
+        "name": "Fruit Milkshakes (Dairy)",
+        "description": "Banana, Mango, Strawberry, Blueberry, Melon, Avocado",
+        "price": "140"
+      },
+      {
+        "name": "Dragonfruit Milkshake (Seasonal)",
+        "description": "",
+        "price": "150"
+      },
+      {
+        "name": "Choco Banana Milkshake",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Strawberry Banana Milkshake",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Peach Mango Milkshake",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Frappe (Milk based)",
+        "description": "Ube, Chocolate, Caramel, Salted Caramel",
+        "price": "160"
+      },
+      {
+        "name": "Choco Cinnamon Frappe",
+        "description": "",
         "price": "180"
       },
       {
-        "name": "Banana Walnut Loaf",
-        "description": "Baked fresh daily.",
-        "price": "85"
+        "name": "Choco Cookie Frappe",
+        "description": "",
+        "price": "180"
+      },
+      {
+        "name": "Choco Strawberry Frappe",
+        "description": "",
+        "price": "180"
+      },
+      {
+        "name": "Matcha Frappe",
+        "description": "",
+        "price": "200"
+      },
+      {
+        "name": "Strawberry Matcha Frappe",
+        "description": "",
+        "price": "220"
+      },
+      {
+        "name": "Blueberry Matcha Frappe",
+        "description": "",
+        "price": "220"
+      },
+      {
+        "name": "Biscoff Frappe",
+        "description": "",
+        "price": "200"
+      },
+      {
+        "name": "Frappe (Espresso based)",
+        "description": "Caramel Macchiato, Salted Caramel, Mocha, White Chocolate, Hazelnut",
+        "price": "180"
+      }
+    ]
+  },
+  {
+    "category": "House Blend Drinks",
+    "items": [
+      {
+        "name": "Sea Salt Latte",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Choco Peppermint",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Mochadamia",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Caramel Macadamia",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Caramel Popcorn",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Salted Caramel Popcorn",
+        "description": "",
+        "price": "160"
+      },
+      {
+        "name": "Dirty Matcha",
+        "description": "",
+        "price": "220"
       }
     ]
   }

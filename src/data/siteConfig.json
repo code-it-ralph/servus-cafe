@@ -4,18 +4,18 @@
   "contact": {
     "phone": "+63 912 345 6789",
     "email": "hello@servuscafe.com",
-    "address": "General Luna St, Poblacion, San Juan, Batangas",
+    "address": "Servus Cafe, Putingbuhangin, San Juan, Batangas, Puting Buhangin, Philippines",
     "messengerLink": "https://m.me/servuscafe",
-    "mapsLink": "https://maps.google.com/?q=San+Juan+Batangas"
+    "mapsLink": "https://maps.app.goo.gl/RdPVqUPghapTtMSA8"
   },
   "hours": [
     {
-      "day": "Monday - Friday",
-      "time": "7:00 AM - 8:00 PM"
+      "day": "Monday",
+      "time": "CLOSED"
     },
     {
-      "day": "Saturday - Sunday",
-      "time": "6:00 AM - 10:00 PM"
+      "day": "Tuesday - Sunday",
+      "time": "10:00 AM - 9:00 PM"
     }
   ]
 }
