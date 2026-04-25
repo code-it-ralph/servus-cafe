@@ -5,11 +5,11 @@ import siteConfig from '../data/siteConfig.json';
 <header class="fixed w-full bg-stone-50 border-b border-stone-200 z-50">
   <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
     <a
-      href="/"
+      href={import.meta.env.BASE_URL}
       class="flex items-center gap-3 font-serif font-bold text-xl text-stone-900 tracking-tight"
     >
       <img
-        src="/logo.png"
+        src={import.meta.env.BASE_URL + 'logo.png'}
         alt="Servus Cafe Logo"
         class="w-10 h-10 rounded-full object-cover"
       />
