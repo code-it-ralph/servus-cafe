@@ -22,7 +22,13 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | {siteConfig.businessName}</title>
+    <title>
+      {
+        title === siteConfig.businessName
+          ? title
+          : `${title} | ${siteConfig.businessName}`
+      }
+    </title>
   </head>
   <body class="bg-coffee-50 text-coffee-900 font-sans antialiased">
     <slot />
