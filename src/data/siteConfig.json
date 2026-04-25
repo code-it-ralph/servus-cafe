@@ -1,11 +1,11 @@
 {
-  "businessName": "San Juan Cafe",
+  "businessName": "Servus Cafe",
   "tagline": "Your perfect stopover before the beach.",
   "contact": {
     "phone": "+63 912 345 6789",
-    "email": "hello@sanjuancafe.com",
+    "email": "hello@servuscafe.com",
     "address": "General Luna St, Poblacion, San Juan, Batangas",
-    "messengerLink": "https://m.me/sanjuancafe",
+    "messengerLink": "https://m.me/servuscafe",
     "mapsLink": "https://maps.google.com/?q=San+Juan+Batangas"
   },
   "hours": [
